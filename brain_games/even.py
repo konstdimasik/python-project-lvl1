@@ -25,7 +25,7 @@ def even_game(user_name):
             right_answer = 'no'
         print('Question: {0}'.format(random_number))
         user_answer = prompt.string('Your answer: ')
-        if user_answer != 'no' and user_answer != 'yes' or user_answer != right_answer:
+        if user_answer != right_answer:
             print("'{0}' is wrong answer ;(. Correct answer was '{1}'".format(user_answer, right_answer))
             print("Let's try again, {0}!".format(user_name))
             right_answer_count = 0
