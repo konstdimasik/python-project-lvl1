@@ -142,3 +142,30 @@ def prog_game(user_name):
         else:
             right_answer_count = 0
     print('Congratulations, {0}!'.format(user_name))
+
+
+def is_prime(num):
+    """Check num for prime."""
+    for i in range(2, num // 2):
+        if num % i == 0:
+            return False
+    return True
+
+
+def prime_game(user_name):
+    """Check user knowlenge in prime numbers."""
+    print('Answer "yes" if given number is prime. Otherwise answer "no".')
+    right_answer_count = 0
+    while right_answer_count < RIGHT_ANSWER_NEEDED:
+        random_number = random.randint(1, 100)
+        if is_prime(random_number):
+            right_answer = 'yes'
+        else:
+            right_answer = 'no'
+        print('Question: {0}'.format(random_number))
+        user_answer = prompt.string('Your answer: ')
+        if ckeck_answer(user_answer, right_answer, user_name):
+            right_answer_count += 1
+        else:
+            right_answer_count = 0
+    print('Congratulations, {0}!'.format(user_name))

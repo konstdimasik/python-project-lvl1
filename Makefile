@@ -27,3 +27,6 @@ brain-gcd:
 
 brain-prog:
 	poetry run brain-prog
+
+brain-prime:
+	poetry run brain-prime
