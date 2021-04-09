@@ -17,26 +17,48 @@ def welcome_user():
     return name
 
 
+def ckeck_answer(user_answer, right_answer, user_name):
+    """Check user answer."""
+    if user_answer != right_answer:
+        print("'{0}' is wrong answer ;(. Correct answer was '{1}'".format(user_answer, right_answer))
+        print("Let's try again, {0}!".format(user_name))
+        return False
+    print('Correct!')
+    return True
+
+
+def is_even(num):
+    """Check for even."""
+    return num % 2 == 0
+
+
 def even_game(user_name):
     """Check user knowlenge about even numbers."""
     print('Answer "yes" if the number is even, otherwise answer "no".')
     right_answer_count = 0
     while right_answer_count < RIGHT_ANSWER_NEEDED:
         random_number = random.randint(0, 100)
-        if random_number % 2 == 0:
+        if is_even(random_number):
             right_answer = 'yes'
         else:
             right_answer = 'no'
         print('Question: {0}'.format(random_number))
         user_answer = prompt.string('Your answer: ')
-        if user_answer != right_answer:
-            print("'{0}' is wrong answer ;(. Correct answer was '{1}'".format(user_answer, right_answer))
-            print("Let's try again, {0}!".format(user_name))
+        if ckeck_answer(user_answer, right_answer, user_name):
+            right_answer_count += 1
+        else:
             right_answer_count = 0
-            continue
-        print('Correct!')
-        right_answer_count += 1
     print('Congratulations, {0}!'.format(user_name))
+
+
+def get_result(num1, num2, operation):
+    """Find result of math operation."""
+    if operation == '+':
+        return num1 + num2
+    elif operation == '-':
+        return num1 - num2
+    elif operation == '*':
+        return num1 * num2
 
 
 def calc_game(user_name):
@@ -47,22 +69,13 @@ def calc_game(user_name):
         random_number1 = random.randint(0, RANDOM_CALC_MAX)
         random_number2 = random.randint(0, RANDOM_CALC_MAX)
         random_operation = random.choice(['+', '-', '*'])
-        if random_operation == '+':
-            right_answer = random_number1 + random_number2
-        elif random_operation == '-':
-            right_answer = random_number1 - random_number2
-        elif random_operation == '*':
-            right_answer = random_number1 * random_number2
-        right_answer = str(right_answer)
+        right_answer = str(get_result(random_number1, random_number2, random_operation))
         print('Question: {0} {1} {2}'.format(random_number1, random_operation, random_number2))
         user_answer = prompt.string('Your answer: ')
-        if user_answer != right_answer:
-            print("'{0}' is wrong answer ;(. Correct answer was '{1}'".format(user_answer, right_answer))
-            print("Let's try again, {0}!".format(user_name))
+        if ckeck_answer(user_answer, right_answer, user_name):
+            right_answer_count += 1
+        else:
             right_answer_count = 0
-            continue
-        print('Correct!')
-        right_answer_count += 1
     print('Congratulations, {0}!'.format(user_name))
 
 
@@ -86,16 +99,46 @@ def gcd_game(user_name):
     print('Find the greatest common divisor of given numbers.')
     right_answer_count = 0
     while right_answer_count < RIGHT_ANSWER_NEEDED:
-        random_number1 = random.randint(0, RANDOM_GCD_MAX)
-        random_number2 = random.randint(0, RANDOM_GCD_MAX)
+        random_number1 = random.randint(1, RANDOM_GCD_MAX)
+        random_number2 = random.randint(1, RANDOM_GCD_MAX)
         right_answer = str(find_gcd(random_number1, random_number2))
         print('Question: {0} {1}'.format(random_number1, random_number2))
         user_answer = prompt.string('Your answer: ')
-        if user_answer != right_answer:
-            print("'{0}' is wrong answer ;(. Correct answer was '{1}'".format(user_answer, right_answer))
-            print("Let's try again, {0}!".format(user_name))
+        if ckeck_answer(user_answer, right_answer, user_name):
+            right_answer_count += 1
+        else:
             right_answer_count = 0
-            continue
-        print('Correct!')
-        right_answer_count += 1
+    print('Congratulations, {0}!'.format(user_name))
+
+
+def make_progression():
+    """Make progression with random length start and step."""
+    length = random.randint(5, 10)
+    start = random.randint(1, 10)
+    step = random.randint(1, 5)
+    numbers = []
+    for i in range(length):
+        numbers.append(start + step * i)
+    return numbers
+
+
+def prog_game(user_name):
+    """Check user knowlenge in understanding progression."""
+    print('What number is missing in the progression?')
+    right_answer_count = 0
+    while right_answer_count < RIGHT_ANSWER_NEEDED:
+        progression = make_progression()
+        random_position = random.randint(0, len(progression))
+        right_answer = str(progression[random_position])
+        print('Question: ', end='')
+        for i, num in enumerate(progression):
+            if i == random_position:
+                print('.. ', end='')
+            else:
+                print('{0} '.format(num), end='')
+        user_answer = prompt.string('\nYour answer: ')
+        if ckeck_answer(user_answer, right_answer, user_name):
+            right_answer_count += 1
+        else:
+            right_answer_count = 0
     print('Congratulations, {0}!'.format(user_name))
