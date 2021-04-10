@@ -20,7 +20,8 @@ def welcome_user():
 def ckeck_answer(user_answer, right_answer, user_name):
     """Check user answer."""
     if user_answer != right_answer:
-        print("'{0}' is wrong answer ;(. Correct answer was '{1}'".format(user_answer, right_answer))
+        print("'{0}' is wrong answer ;(. "
+              "Correct answer was '{1}'".format(user_answer, right_answer))
         print("Let's try again, {0}!".format(user_name))
         return False
     print('Correct!')
@@ -66,11 +67,11 @@ def calc_game(user_name):
     print('What is the result of the expression?')
     right_answer_count = 0
     while right_answer_count < RIGHT_ANSWER_NEEDED:
-        random_number1 = random.randint(0, RANDOM_CALC_MAX)
-        random_number2 = random.randint(0, RANDOM_CALC_MAX)
-        random_operation = random.choice(['+', '-', '*'])
-        right_answer = str(get_result(random_number1, random_number2, random_operation))
-        print('Question: {0} {1} {2}'.format(random_number1, random_operation, random_number2))
+        rndm_num1 = random.randint(0, RANDOM_CALC_MAX)
+        rndm_num2 = random.randint(0, RANDOM_CALC_MAX)
+        rndm_oper = random.choice(['+', '-', '*'])
+        right_answer = str(get_result(rndm_num1, rndm_num2, rndm_oper))
+        print('Question: {0} {1} {2}'.format(rndm_num1, rndm_oper, rndm_numb2))
         user_answer = prompt.string('Your answer: ')
         if ckeck_answer(user_answer, right_answer, user_name):
             right_answer_count += 1
