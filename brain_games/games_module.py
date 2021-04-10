@@ -47,7 +47,7 @@ def even_game(user_name):
         if ckeck_answer(user_answer, right_answer, user_name):
             right_answer_count += 1
         else:
-            right_answer_count = 0
+            return
     print('Congratulations, {0}!'.format(user_name))
 
 
@@ -75,7 +75,7 @@ def calc_game(user_name):
         if ckeck_answer(user_answer, right_answer, user_name):
             right_answer_count += 1
         else:
-            right_answer_count = 0
+            return
     print('Congratulations, {0}!'.format(user_name))
 
 
@@ -107,7 +107,7 @@ def gcd_game(user_name):
         if ckeck_answer(user_answer, right_answer, user_name):
             right_answer_count += 1
         else:
-            right_answer_count = 0
+            return
     print('Congratulations, {0}!'.format(user_name))
 
 
@@ -140,7 +140,7 @@ def prog_game(user_name):
         if ckeck_answer(user_answer, right_answer, user_name):
             right_answer_count += 1
         else:
-            right_answer_count = 0
+            return
     print('Congratulations, {0}!'.format(user_name))
 
 
@@ -167,5 +167,5 @@ def prime_game(user_name):
         if ckeck_answer(user_answer, right_answer, user_name):
             right_answer_count += 1
         else:
-            right_answer_count = 0
+            return
     print('Congratulations, {0}!'.format(user_name))
