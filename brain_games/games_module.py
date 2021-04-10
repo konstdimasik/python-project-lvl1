@@ -24,7 +24,6 @@ def ckeck_answer(user_answer, right_answer, user_name):
             "'{0}' is wrong answer ;(. ".format(user_answer)
             + "Correct answer was '{0}'".format(right_answer)
         )
->>>>>>> refs/remotes/origin/main
         print("Let's try again, {0}!".format(user_name))
         return False
     print('Correct!')
