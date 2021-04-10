@@ -128,7 +128,7 @@ def prog_game(user_name):
     right_answer_count = 0
     while right_answer_count < RIGHT_ANSWER_NEEDED:
         progression = make_progression()
-        random_position = random.randint(0, len(progression))
+        random_position = random.randint(0, len(progression) - 1)
         right_answer = str(progression[random_position])
         print('Question: ', end='')
         for i, num in enumerate(progression):
