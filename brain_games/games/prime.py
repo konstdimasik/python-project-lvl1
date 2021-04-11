@@ -3,7 +3,9 @@
 
 def is_prime(num):
     """Check num for prime."""
-    for i in range(2, num // 2):
-        if num % i == 0:
-            return False
-    return True
+    if num % 2 == 0:
+        return num == 2
+    divider = 3
+    while divider * divider <= num and num % divider != 0:
+        divider += 2
+    return divider * divider > num
