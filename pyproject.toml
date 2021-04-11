@@ -1,10 +1,14 @@
 [tool.poetry]
 name = "hexlet-code"
 version = "0.1.0"
-description = ""
+description = "5 simple arithmetic пфьуы"
 authors = ["Dmitry Konstantinov <konstdimasik@gmail.com>"]
+repository = "https://github.com/konstdimasik/python-project-lvl1"
 packages = [
   { include = "brain_games" },
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
 ]
 
 [tool.poetry.dependencies]
