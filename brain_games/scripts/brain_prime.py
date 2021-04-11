@@ -21,7 +21,7 @@ def main():
     print('Answer "yes" if given number is prime. Otherwise answer "no".')
     right_answer_count = 0
     while right_answer_count < RIGHT_ANSWER_NEEDED:
-        random_number = random.randint(1, MAX_CHECK_NUM)
+        random_number = random.randint(2, MAX_CHECK_NUM)
         if is_prime(random_number):
             right_answer = 'yes'
         else:
