@@ -27,4 +27,4 @@ def generate_level():
             question += '.. '
         else:
             question += '{0} '.format(num)
-    return (question, right_answer)
+    return question, right_answer
