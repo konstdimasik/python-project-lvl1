@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 """Prime programm."""
 
+from brain_games.game_engine import run
 from brain_games.games import prime
-from brain_games.games_module import engine
 
 
 def main():
     """Check user knowlenge in prime numbers."""
-    engine(prime)
+    run(prime)
 
 
 if __name__ == '__main__':

@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 """GCD programm."""
 
+from brain_games.game_engine import run
 from brain_games.games import gcd
-from brain_games.games_module import engine
 
 
 def main():
     """Check user knowlenge in simple math."""
-    engine(gcd)
+    run(gcd)
 
 
 if __name__ == '__main__':
