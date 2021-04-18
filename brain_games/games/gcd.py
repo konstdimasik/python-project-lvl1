@@ -23,5 +23,5 @@ def generate_level():
     random_number1 = random.randint(1, RANDOM_GCD_MAX)
     random_number2 = random.randint(1, RANDOM_GCD_MAX)
     right_answer = str(find_gcd(random_number1, random_number2))
-    question = 'Question: {0} {1}'.format(random_number1, random_number2)
+    question = '{0} {1}'.format(random_number1, random_number2)
     return question, right_answer

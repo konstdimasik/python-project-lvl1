@@ -13,7 +13,7 @@ def run(game):
     print(game.RULES)
     for _ in range(RIGHT_ANSWER_NEEDED):
         question, right_answer = game.generate_level()
-        print(question)
+        print('Question: {0}'.format(question))
         user_answer = prompt.string('Your answer: ')
         if user_answer != right_answer:
             print(

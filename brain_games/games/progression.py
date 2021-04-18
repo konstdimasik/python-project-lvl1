@@ -21,7 +21,7 @@ def generate_level():
     progression = make_progression()
     random_position = random.randint(0, len(progression) - 1)
     right_answer = str(progression[random_position])
-    question = 'Question: '
+    question = ''
     for i, num in enumerate(progression):
         if i == random_position:
             question += '.. '

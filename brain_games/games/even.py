@@ -17,5 +17,5 @@ def generate_level():
         right_answer = 'yes'
     else:
         right_answer = 'no'
-    question = 'Question: {0}'.format(random_number)
+    question = '{0}'.format(random_number)
     return question, right_answer
