@@ -10,22 +10,14 @@ def make_progression():
     length = random.randint(5, 10)
     start = random.randint(1, 10)
     step = random.randint(1, 5)
-    numbers = []
-    for i in range(length):
-        numbers.append(start + step * i)
-    return numbers
+    return [str(start + step * i) for i in range(length)]
 
 
 def generate_level():
     """Progression game core."""
     progression = make_progression()
-    random_position = random.randint(0, len(progression) - 1)
-    right_answer = str(progression[random_position])
-    progression_question = []
-    for i, num in enumerate(progression):
-        if i == random_position:
-            progression_question.append('..')
-        else:
-            progression_question.append('{0}'.format(num))
-    question = ' '.join(progression_question)
+    empty = random.randint(0, len(progression) - 1)
+    right_answer = str(progression[empty])
+    progression[empty] = '..'
+    question = ' '.join(progression)
     return question, right_answer
