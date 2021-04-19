@@ -10,11 +10,7 @@ def make_progression():
     length = random.randint(5, 10)
     start = random.randint(1, 10)
     step = random.randint(1, 5)
-<<<<<<< HEAD
     return [str(start + step * i) for i in range(length)]
-=======
-    return [start + step * i for i in range(length)]
->>>>>>> refs/remotes/origin/main
 
 
 def generate_level():
