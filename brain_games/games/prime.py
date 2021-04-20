@@ -20,7 +20,7 @@ def is_prime(num):
 
 def generate_level():
     """Prime game core."""
-    random_number = random.randint(MAX_CHECK_NUM)
+    random_number = random.randint(1, MAX_CHECK_NUM)
     if is_prime(random_number):
         right_answer = 'yes'
     else:
