@@ -8,6 +8,8 @@ RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 def is_prime(num):
     """Check num for prime."""
+    if num < 2:
+        return False
     if num % 2 == 0:
         return num == 2
     divider = 3
@@ -18,7 +20,7 @@ def is_prime(num):
 
 def generate_level():
     """Prime game core."""
-    random_number = random.randint(2, MAX_CHECK_NUM)
+    random_number = random.randint(MAX_CHECK_NUM)
     if is_prime(random_number):
         right_answer = 'yes'
     else:
