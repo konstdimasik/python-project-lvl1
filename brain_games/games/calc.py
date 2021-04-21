@@ -3,7 +3,7 @@
 import random
 
 RANDOM_CALC_MAX = 20
-RULES = 'What is the result of the expression?'
+RULE = 'What is the result of the expression?'
 
 
 def get_result(num1, num2, operation):
@@ -16,7 +16,7 @@ def get_result(num1, num2, operation):
         return num1 * num2
 
 
-def generate_level():
+def generate_round():
     """Calc game core."""
     rndm_num1 = random.randint(0, RANDOM_CALC_MAX)
     rndm_num2 = random.randint(0, RANDOM_CALC_MAX)

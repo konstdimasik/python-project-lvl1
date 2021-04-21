@@ -2,7 +2,7 @@
 
 import random
 
-RULES = 'What number is missing in the progression?'
+RULE = 'What number is missing in the progression?'
 
 
 def make_progression():
@@ -13,7 +13,7 @@ def make_progression():
     return [str(start + step * i) for i in range(length)]
 
 
-def generate_level():
+def generate_round():
     """Progression game core."""
     progression = make_progression()
     empty = random.randint(0, len(progression) - 1)

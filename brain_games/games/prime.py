@@ -3,7 +3,7 @@
 import random
 
 MAX_CHECK_NUM = 100
-RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
+RULE = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
 def is_prime(num):
@@ -18,7 +18,7 @@ def is_prime(num):
     return divider * divider > num
 
 
-def generate_level():
+def generate_round():
     """Prime game core."""
     random_number = random.randint(1, MAX_CHECK_NUM)
     if is_prime(random_number):

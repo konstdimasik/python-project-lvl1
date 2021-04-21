@@ -10,9 +10,9 @@ def run(game):
     print('Welcome to the Brain Games!')
     user_name = prompt.string('May I have your name? ')
     print('Hello, {0}!'.format(user_name))
-    print(game.RULES)
+    print(game.RULE)
     for _ in range(RIGHT_ANSWER_NEEDED):
-        question, right_answer = game.generate_level()
+        question, right_answer = game.generate_round()
         print('Question: {0}'.format(question))
         user_answer = prompt.string('Your answer: ')
         if user_answer != right_answer:

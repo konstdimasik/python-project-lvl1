@@ -3,7 +3,7 @@
 import random
 
 RANDOM_GCD_MAX = 50
-RULES = 'Find the greatest common divisor of given numbers.'
+RULE = 'Find the greatest common divisor of given numbers.'
 
 
 def find_gcd(num1, num2):
@@ -18,7 +18,7 @@ def find_gcd(num1, num2):
     return gcd
 
 
-def generate_level():
+def generate_round():
     """GCD game core."""
     random_number1 = random.randint(1, RANDOM_GCD_MAX)
     random_number2 = random.randint(1, RANDOM_GCD_MAX)
